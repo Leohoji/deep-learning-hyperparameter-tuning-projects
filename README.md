@@ -10,7 +10,7 @@ This github includes several projects which I interested in such as hyperparamet
 
 - python 3.8
 
-- tensorflow 2.5.0 【 If you have GPU to accelerate, you could install tensorflow-gpu 2.5.0 with CUDA 11.2 and cuDNN 8.1. 】
+- tensorflow 2.5.0 【 If you have GPU to accelerate, you could install tensorflow-gpu 2.5.0 with CUDA 11.2 and cuDNN 8.1 】
 
 - Others in `requirements.txt`
 
