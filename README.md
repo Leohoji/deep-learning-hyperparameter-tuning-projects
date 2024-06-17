@@ -4,7 +4,7 @@ This github includes several projects which I interested in such as hyperparamet
 
 | Project completed | Techniques | Introduction |
 | :---------------: | :----------: | :--------: |
-| ☑ [CNN-keras-mnist-gridsearch](#project1) | Tensorflow, GridSearchCV, KerasClassifier | Use GridSearchCV with KerasClassifier to search best hyperparameters in simple CNN model trained on MNIST database. |
+| ☑ [CNN-keras-mnist-gridsearch](#project1) | Tensorflow, GridSearchCV, KerasClassifier | Use GridSearchCV with KerasClassifier to search best hyperparameters in simple CNN model trained on MNIST database. [Codes](https://github.com/Leohoji/deep-learning-for-hyperparameters-searching/blob/main/CNN-keras-mnist-gridsearch.ipynb) |
 
 <h2>Prerequisites</h2>
 
@@ -17,6 +17,8 @@ This github includes several projects which I interested in such as hyperparamet
 💻 The GPU I use is **GeForce GTX 1050 Ti**
 
 <h2 id='project1'>CNN-keras-mnist-gridsearch</h2>
+
+**Notebooks Here**  --> [CNN-keras-mnist-gridsearch.ipynb](https://github.com/Leohoji/deep-learning-for-hyperparameters-searching/blob/main/CNN-keras-mnist-gridsearch.ipynb)
 
 Use GridSearchCV with KerasClassifier to search best hyperparameters in simple CNN model trained on MNIST database.
 
