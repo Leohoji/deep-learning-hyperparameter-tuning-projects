@@ -1,10 +1,10 @@
-<h1> Deep learning for hyperparameters searching </h1>
+<h1 id='main-title'> Deep learning for hyperparameters searching </h1>
 
 This github includes several projects which I interested in such as hyperparameters grid searching by `GridSearchCV`,  Genetic Algorithm (GA), or others.
 
-| Project completed | Techniques | Introduction |
-| :---------------: | :----------: | :--------: |
-| ☑ [CNN-keras-mnist-gridsearch](#project1) | Tensorflow, GridSearchCV, KerasClassifier | Use GridSearchCV with KerasClassifier to search best hyperparameters in simple CNN model trained on MNIST database. [Codes](https://github.com/Leohoji/deep-learning-for-hyperparameters-searching/blob/main/CNN-keras-mnist-gridsearch.ipynb) |
+| Project completed | Techniques | Introduction | Codes |
+| :---------------: | :----------: | :--------: | :--------: |
+| [CNN-keras-mnist-gridsearch](#project1) | Tensorflow, GridSearchCV, KerasClassifier | Use GridSearchCV with KerasClassifier to search best hyperparameters in simple CNN model trained on MNIST database. | [Link](https://github.com/Leohoji/deep-learning-for-hyperparameters-searching/blob/main/CNN-keras-mnist-gridsearch.ipynb) |
 
 <h2>Prerequisites</h2>
 
@@ -44,3 +44,31 @@ Use GridSearchCV with KerasClassifier to search best hyperparameters in simple C
 3. Use KerasClassifier wrapper to pacckage CNN model.
 4. Pass the wrapped model and hyperparameters expected to searched into GridSearchCV API.
 5. Analize the results and conclude the experiment.
+
+#### Results
+
+Finally find some conditions that can make the peformance of the model be better
+
+<table>
+    <thead>
+        <tr>
+            <th colspan=2>Better Performance</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>Accuracy</strong></td>
+            <td> > 90% </td>
+        </tr>
+        <tr>
+            <td><strong>Batch Size</strong></td>
+            <td> 8, 32 </td>
+        </tr>
+        <tr>
+            <td><strong>Activation Function</strong></td>
+            <td> ReLU or Tanh </td>
+        </tr>
+    </tbody>
+</table>
+
+> [Back to outlines](#main-title)
