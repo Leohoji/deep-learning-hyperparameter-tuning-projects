@@ -5,7 +5,7 @@ This github includes several projects which I interested in such as hyperparamet
 | Project completed | Techniques | Introduction | Codes |
 | :---------------: | :----------: | :--------: | :--------: |
 | [CNN-keras-mnist-gridsearch](#project1) | Tensorflow, GridSearchCV, KerasClassifier | Use GridSearchCV with KerasClassifier to search best hyperparameters in simple CNN model trained on MNIST database. | [Link](https://github.com/Leohoji/deep-learning-for-hyperparameters-searching/blob/main/CNN-keras-mnist-gridsearch.ipynb) |
-| [AAPL-price-prediction-using-LSTM-GA](#project2) | --- |--- | ---- |
+| [price-pred-using-LSTM--applying-genetic-algorithm](#project2) | --- |--- | ---- |
 
 <h2>Prerequisites</h2>
 
@@ -60,7 +60,7 @@ Finally find some conditions that can make the model peform better, following co
 > [Back to outlines](#main-title)
 
 
-<h2 id='project2'>AAPL-price-prediction-using-LSTM-applying-genetic-algorithm</h2>
+<h2 id='project2'>price-prediction-using-LSTM-applying-genetic-algorithm</h2>
 
 **Notebooks Here**  --> 
 
