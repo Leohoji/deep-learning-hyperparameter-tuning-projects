@@ -20,7 +20,7 @@ This github includes several projects which I interested in such as hyperparamet
 
 <h2 id='project1'>CNN-keras-mnist-gridsearch</h2>
 
-**Notebooks Here**  --> [CNN-keras-mnist-gridsearch.ipynb](https://github.com/Leohoji/deep-learning-for-hyperparameters-searching/blob/main/CNN-keras-mnist-gridsearch.ipynb)
+**Notebooks Here**  --> [CNN-keras-mnist-gridsearch.ipynb](https://github.com/Leohoji/machine-learning-deep-learning-projects/blob/main/cnn-keras-mnist-gridsearch/CNN-keras-mnist-gridsearch.ipynb)
 
 Use GridSearchCV with KerasClassifier to search best hyperparameters in simple CNN model trained on MNIST database.
 
