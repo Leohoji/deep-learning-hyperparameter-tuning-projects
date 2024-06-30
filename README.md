@@ -5,7 +5,7 @@ This github includes several projects which I interested in such as hyperparamet
 | Project completed | Techniques | Introduction | Codes |
 | :---------------: | :----------: | :--------: | :--------: |
 | [CNN-keras-mnist-gridsearch](#project1) | Computer Vision, Classification, GridSearchCV, KerasClassifier | Use GridSearchCV with KerasClassifier to search best hyperparameters in simple CNN model trained on MNIST database. | [Link](https://github.com/Leohoji/deep-learning-for-hyperparameters-searching/blob/main/CNN-keras-mnist-gridsearch.ipynb) |
-| [price-pred-using-LSTM-applying-genetic-algorithm](#project2) | Time-Series analysis, Prediction, Genetic Algorithm | Use genetic algorithm (GA) technique to search better hyperparameters in simple Long Short-Term Memory (LSTM) model trained on APPL stock database from [kaggle dataset](https://www.kaggle.com/datasets/kalilurrahman/nasdaq100-stock-price-data/data?authuser=0) | ---- |
+| [price-pred-using-LSTM-applying-genetic-algorithm](#project2) | Time-Series analysis, Prediction, Genetic Algorithm | Use genetic algorithm (GA) technique to search better hyperparameters in simple Long Short-Term Memory (LSTM) model trained on APPL stock database from [kaggle dataset](https://www.kaggle.com/datasets/kalilurrahman/nasdaq100-stock-price-data/data?authuser=0) | [Link](https://github.com/Leohoji/deep-learning-hyperparameter-tuning-projects/blob/main/lstm-price-preds-genetic-algorithm/price-prediction-using-LSTM-applying-genetic-algorithm.ipynb) |
 
 <h2>Prerequisites</h2>
 
