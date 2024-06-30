@@ -1,4 +1,4 @@
-<h1 id='main-title'> Machine Learning And Deep Learning Projects </h1>
+<h1 id='main-title'> Deep Learning Hyperparameter Tuning Projects </h1>
 
 This github includes several projects which I interested in such as hyperparameters grid searching by `GridSearchCV`,  Genetic Algorithm (GA), or others.
 
