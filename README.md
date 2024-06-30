@@ -5,7 +5,7 @@ This github includes several projects which I interested in such as hyperparamet
 | Project completed | Techniques | Introduction | Codes |
 | :---------------: | :----------: | :--------: | :--------: |
 | [CNN-keras-mnist-gridsearch](#project1) | Computer Vision, Classification, GridSearchCV, KerasClassifier | Use GridSearchCV with KerasClassifier to search best hyperparameters in simple CNN model trained on MNIST database. | [Link](https://github.com/Leohoji/deep-learning-for-hyperparameters-searching/blob/main/CNN-keras-mnist-gridsearch.ipynb) |
-| [price-pred-using-LSTM-applying-genetic-algorithm](#project2) | Time-Series analysis, Prediction, Genetic Algorithm | Use genetic algorithm (GA) technique to search better hyperparameters in simple Long Short-Term Memory (LSTM) model trained on APPL stock database from [kaggle dataset] | ---- |
+| [price-pred-using-LSTM-applying-genetic-algorithm](#project2) | Time-Series analysis, Prediction, Genetic Algorithm | Use genetic algorithm (GA) technique to search better hyperparameters in simple Long Short-Term Memory (LSTM) model trained on APPL stock database from [kaggle dataset](https://www.kaggle.com/datasets/kalilurrahman/nasdaq100-stock-price-data/data?authuser=0) | ---- |
 
 <h2>Prerequisites</h2>
 
@@ -64,7 +64,7 @@ Finally find some conditions that can make the model peform better, following co
 
 **Notebooks Here**  --> 
 
-Use genetic algorithm (GA) technique to search better hyperparameters in simple Long Short-Term Memory (LSTM) model trained on APPL stock database from [kaggle dataset]((https://www.kaggle.com/datasets/kalilurrahman/nasdaq100-stock-price-data/data?authuser=0)).
+Use genetic algorithm (GA) technique to search better hyperparameters in simple Long Short-Term Memory (LSTM) model trained on APPL stock database from [kaggle dataset](https://www.kaggle.com/datasets/kalilurrahman/nasdaq100-stock-price-data/data?authuser=0).
 
 <h3>How Do I Complete This Project</h3>
 
@@ -82,6 +82,8 @@ This project is to conquer a prediction problem of time-series data. I would lik
 <h3><ins>Data and Features</ins></h3>
 
 The dataset used in this project is a time-series data from from kaggle dataset: [NASDAQ-100 Stock Price Dataset](https://www.kaggle.com/datasets/kalilurrahman/nasdaq100-stock-price-data/data?authuser=0), this dataset contains stock prices of all NASDAQ-100 index stocks (as on Sep 2021) from 2010, I only choose AAPL index to predict.
+
+Testing data: 2012/01 - 2012/06 APPL historiccal stocck price data.
 
 A **structured data** with **271680** data points, all th columns are numerical.
 
