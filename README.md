@@ -26,7 +26,7 @@ Use GridSearchCV with KerasClassifier to search best hyperparameters in simple C
 
 <h3>How Do I Complete This Project</h3>
 
-#### Summary of process
+#### Summary of experimental process
 <p align='left'>
   <img alt="process of project" src="https://github.com/Leohoji/projects_for_hyperparameters_searching/blob/main/introduction_images/process_for_cnn_gridsearch.png?raw=true" width=500 height=300>
 </p>
