@@ -103,14 +103,13 @@ A **structured data** with **271680** data points, all th columns are numerical.
 
 At present, most people's guess is that the stock price will be related to the previous day or previous data, hence, the previous data is feature, the current day is label. 
 
-
 <h3><ins>Evaluation</ins></h3>
 
 **Mean Square Error (MSE)** is a common metric for prediction problem, I use it to be the model's loss function and GA's fitness function.
 
 $\text{MSE: } \frac{1}{N}\Sigma_{i=1}^{N}(y_{i} - {\hat{y}})^{2}$
 
-<h3>**<ins>Modeling</ins>**</h3>
+<h3><ins>Modeling</ins></h3>
 
 ```python
 def LSTM_model(input_shape):
