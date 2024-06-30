@@ -62,7 +62,7 @@ Finally find some conditions that can make the model peform better, following co
 
 <h2 id='project2'>Stock price prediction using LSTM applying genetic algorithm</h2>
 
-**Notebooks Here**  --> 
+**Notebooks Here**  --> [price-prediction-using-LSTM-applying-genetic-algorithm.ipynb](https://github.com/Leohoji/deep-learning-hyperparameter-tuning-projects/blob/main/lstm-price-preds-genetic-algorithm/price-prediction-using-LSTM-applying-genetic-algorithm.ipynb)
 
 Use genetic algorithm (GA) technique to search better hyperparameters in simple Long Short-Term Memory (LSTM) model trained on APPL stock database from [kaggle dataset](https://www.kaggle.com/datasets/kalilurrahman/nasdaq100-stock-price-data/data?authuser=0).
 
