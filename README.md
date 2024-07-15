@@ -177,7 +177,7 @@ ExperimentaL conditions:
 
 I also use [ReduceLROnPlateau](https://www.tensorflow.org/api_docs/python/tf/keras/callbacks/ReduceLROnPlateau) API for learning rate reduction gradually during training.
 
-2. Apply genetic algoruthm (GA) to find better `epoch` and `look_back` hyperparameters.
+2. Apply genetic algorithm (GA) to find better `epoch` and `look_back` hyperparameters.
 
 The detail introduction of GA is written on my medium (Traditional Chinese): [基因演算法 (Genetic Algorithm, GA) 介紹](https://medium.com/@leo122196/%E5%9F%BA%E5%9B%A0%E6%BC%94%E7%AE%97%E6%B3%95-genetic-algorithm-ga-%E4%BB%8B%E7%B4%B9-62df31c0e670)
 
