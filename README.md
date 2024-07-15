@@ -83,11 +83,13 @@ This project is to conquer a prediction problem of time-series data. I would lik
 
 <h3><ins>Data and Features</ins></h3>
 
-The dataset used in this project is a time-series data from from kaggle dataset: [NASDAQ-100 Stock Price Dataset](https://www.kaggle.com/datasets/kalilurrahman/nasdaq100-stock-price-data/data?authuser=0), this dataset contains stock prices of all NASDAQ-100 index stocks (as on Sep 2021) from 2010, I only choose AAPL index to predict.
+The dataset used in this project is a time-series data from from kaggle dataset:
 
-Testing data: 2012/01 - 2012/06 APPL historiccal stocck price data.
+**Training data**: [NASDAQ-100 Stock Price Dataset](https://www.kaggle.com/datasets/kalilurrahman/nasdaq100-stock-price-data/data?authuser=0), this dataset contains stock prices of all NASDAQ-100 index stocks (as on Sep 2021) from 2010, I only choose AAPL index to predict.
 
-A **structured data** with **271680** data points, all th columns are numerical.
+**Testing data**: 2012/01 - 2012/06 APPL historiccal stocck price data.
+
+A **structured data** with **271680** data points, all columns are numerical.
 
 | Columns   | Description                        |
 | :-------- | :--------------------------------- |
