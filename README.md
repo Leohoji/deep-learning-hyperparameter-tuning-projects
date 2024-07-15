@@ -227,7 +227,7 @@ Following is the condition I used in GA:
 
 All of selection methods can drive the GA to evolve the better hyperparameter searching.
 
-The evalueation value of baseline model is `0.683`, and it improves to `0.166`, `0.169`, and `0.15` by using GA with Rank Selection, Roulette Wheel Selection, and Tournament Selection respectively.
+The evaluation value of baseline model is `0.683`, and it improves to `0.166`, `0.169`, and `0.15` by using GA with Rank Selection, Roulette Wheel Selection, and Tournament Selection respectively.
 
 | Model                    | MSE value | Epochs | Windows (Look Back) |
 | -----------------------  | --------- | ------ | ------------------- |
