@@ -2,43 +2,48 @@
 
 Use genetic algorithm (GA) technique to search better hyperparameters in simple Long Short-Term Memory (LSTM) model trained on APPL stock database from [kaggle dataset](https://www.kaggle.com/datasets/kalilurrahman/nasdaq100-stock-price-data/data?authuser=0).
 
+**Notebooks Here**  --> [price-prediction-using-LSTM-applying-genetic-algorithm.ipynb](https://github.com/Leohoji/deep-learning-hyperparameter-tuning-projects/blob/main/lstm-price-preds-genetic-algorithm/price-prediction-using-LSTM-applying-genetic-algorithm.ipynb)
+
 <h2>Prerequisites</h2>
 
 - python 3.8
 
-- tensorflow 2.5.0 【 If you have GPU to accelerate, you could install tensorflow-gpu 2.5.0 with CUDA 11.2 and cuDNN 8.1 】
+- tensorflow 2.5.0+ 【 If you have GPU to accelerate, you could install tensorflow-gpu 2.5.0 with CUDA 11.2 and cuDNN 8.1 】
 
 - Others in `requirements.txt`
 
 💻 The GPU I use is **GeForce GTX 1050 Ti**
 
+<h2>How Do I Complete This Project</h2>
 
-**Notebooks Here**  --> [price-prediction-using-LSTM-applying-genetic-algorithm.ipynb](https://github.com/Leohoji/deep-learning-hyperparameter-tuning-projects/blob/main/lstm-price-preds-genetic-algorithm/price-prediction-using-LSTM-applying-genetic-algorithm.ipynb)
+I will introduce the details of experiments in this project.
 
-**Mediun Blog** --> [我如何利用基因演算法 (Genetic Algorithm, GA) 調整神經網路超參數](https://medium.com/@leo122196/%E6%88%91%E5%A6%82%E4%BD%95%E5%88%A9%E7%94%A8%E5%9F%BA%E5%9B%A0%E6%BC%94%E7%AE%97%E6%B3%95-genetic-algorithm-ga-%E8%AA%BF%E6%95%B4%E7%A5%9E%E7%B6%93%E7%B6%B2%E8%B7%AF%E8%B6%85%E5%8F%83%E6%95%B8-470f64d6cf71)
-
-<h3>How Do I Complete This Project</h3>
-
-#### Summary of experimental process
+### Summary of experimental process
 <p align='left'>
   <img alt="process of project" src="https://github.com/Leohoji/deep-learning-hyperparameter-tuning-projects/blob/main/introduction_images/process_of_GA_experiment.png?raw=true" width=700 height=400>
 </p>
 
-In this project I will follow the following steps to complete my project: 
+First, the LSTM model will fit the processed data, and calculate the exvaluation value, determine whether the value is met the temination metrics. If the temination metrics are triggered, the algorithm will shut down and return the best hyperparameters, on the other hand, the algorithm will continue to next generation if the termination metrics are not triggered, before going to next generation the chromosomes (hyperparameters) will pass to the GA operator including Selection, Crossover, and Mutation for generating offsprings, iterate this process continuously until the metrics are met. For more detail information about genetic algorithm about my project please visit my **mediun blog**: [我如何利用基因演算法 (Genetic Algorithm, GA) 調整神經網路超參數](https://medium.com/@leo122196/%E6%88%91%E5%A6%82%E4%BD%95%E5%88%A9%E7%94%A8%E5%9F%BA%E5%9B%A0%E6%BC%94%E7%AE%97%E6%B3%95-genetic-algorithm-ga-%E8%AA%BF%E6%95%B4%E7%A5%9E%E7%B6%93%E7%B6%B2%E8%B7%AF%E8%B6%85%E5%8F%83%E6%95%B8-470f64d6cf71)
+
+In this project I will follow the following steps to complete it: 
 
 <h3>Problem definition</h3>
 
-This project is to conquer a prediction problem of time-series data. I would like to apply a evolution algorithms named Genetic Algorithm, short for GA, on LSTM model, a recursive neural network, to find a set of hyperparameters to let the predictions of stock by model be close to real price.
+First, I have to define my problem expected to be solved in this project:
 
-<h3>Data and Features</h3>
+The process of training a deep learning model is mainly a optimization problem, that it to say, during the training process, I would like to find a set of hyperparameters to let the predictions of stock by model be close to real price. However, there are many ways to search the best hyperparameters, the common one is using `GridSearchCV` from **sci-kit learn** library, I think whether I can apply a evolution algorithms such as Genetic Algorithm, named as GA, on model to figure out the problem?
 
-The dataset used in this project is a time-series data from from kaggle dataset:
+<h3>Data</h3>
 
-**Training data**: [NASDAQ-100 Stock Price Dataset](https://www.kaggle.com/datasets/kalilurrahman/nasdaq100-stock-price-data/data?authuser=0), this dataset contains stock prices of all NASDAQ-100 index stocks (as on Sep 2021) from 2010, I only choose AAPL index to predict.
+Second, I will check what data I have to deal with, and what features in data:
 
-**Testing data**: 2012/01 - 2012/06 APPL historiccal stocck price data.
+The dataset is a time-series data as well as a **structured data** with **271680** data points in `csv` format, all columns are numerical:
 
-A **structured data** with **271680** data points, all columns are numerical.
+- **Training data**: [NASDAQ-100 Stock Price](https://www.kaggle.com/datasets/kalilurrahman/nasdaq100-stock-price-data/data?authuser=0) dataset contains stock prices of all NASDAQ-100 index stocks (as on Sep 2021) from 2010, I only choose AAPL index to predict.
+
+- **Testing data**: 2012/01 - 2012/06 APPL historiccal stocck price data.
+
+<h3>Features</h3>
 
 | Columns   | Description                        |
 | :-------- | :--------------------------------- |
@@ -50,19 +55,37 @@ A **structured data** with **271680** data points, all columns are numerical.
 | Volume    | Volume Traded on that day          |
 | Name      | Stock Name (contains 100 stocks)   |
 
+**The `N` days are features, the `N+1` day is lable**
+
 <p align='left'>
   <img alt="feature-and-labels" src="https://github.com/Leohoji/machine-learning-deep-learning-projects/blob/main/introduction_images/features-for-time-series.png?raw=true" width=800 height=200>
 </p>
 
-At present, most people's guess is that the stock price will be related to the previous day or previous data, hence, the previous data is feature, the current day is label. 
+At present, most people's guess is that the stock price will be related to the previous day or previous data which is named `autocoorelation`, hence, the previous data is feature, the current day is label. 
 
 <h3>Evaluation</h3>
+
+Third, I have to define an evaluation for stop metrics, either for GA or mdoel.
 
 **Mean Square Error (MSE)** is a common metric for prediction problem, I use it to be the model's loss function and GA's fitness function.
 
 $\text{MSE: } \frac{1}{N}\Sigma_{i=1}^{N}(y_{i} - {\hat{y}})^{2}$
 
 <h3>Modeling</h3>
+
+Fourth, what model do I use, is it suitable?
+
+<p align='left'>
+  <img alt="LSTM" src="https://www.mdpi.com/water/water-11-01387/article_deploy/html/images/water-11-01387-g004.png" width=550 height=461>
+</p>
+
+*The structure of the Long Short-Term Memory (LSTM) neural network. [(source)](https://blog.mlreview.com/understanding-lstm-and-its-diagrams-37e2f46f1714)*
+
+I would like to conquer a prediction problem of time-series data, and the GA will be applied on LSTM model, a type of recursive neural network (RNN), to find a set of hyperparameters to let the predictions close to real price as possible as I can. However, LSTM neural network has the ability to learn time series related data, which requires long-term dependence and memory ability on information.
+
+LSTMs are a special kind of RNN, capable of learning long-term dependencies and remembering information for prolonged periods of time as a default [(source)](https://www.mdpi.com/2073-4441/11/7/1387).
+
+The following codes are the architecture of LSTM applied in project:
 
 ```python
 def LSTM_model(input_shape):
@@ -97,6 +120,8 @@ def LSTM_model(input_shape):
 ```
 
 <h3>Experiments</h3>
+
+Fifth, I have to design the process of experiments and recycle it until the performance is improved.
 
 **Data Preprocessing**
 
@@ -140,9 +165,12 @@ ExperimentaL conditions for `GA searching`:
 | Epochs              | `??`          |
 | Look backs          | `??`          |
 
-I also use [ReduceLROnPlateau](https://www.tensorflow.org/api_docs/python/tf/keras/callbacks/ReduceLROnPlateau) API for learning rate reduction gradually during training.
+I also use:
+- [ReduceLROnPlateau](https://www.tensorflow.org/api_docs/python/tf/keras/callbacks/ReduceLROnPlateau) API for learning rate reduction gradually during training.
+- [EarlyStopping](https://www.tensorflow.org/api_docs/python/tf/keras/callbacks/EarlyStopping) API to stop training when a monitored metric has stopped improving.
 
 Following is the condition I used in GA:
+
 | **Component**                 | **Description**                                                                                         |
 | :---------------------------- | :------------------------------------------------------------------------------------------------------ |
 | **Population Initialization** | 10 `[epochs, look_back]` groups to combine a population with randomly generation.                       |
@@ -160,7 +188,7 @@ Following is the condition I used in GA:
 |   - Max Iteration             | Max iteration is set as 100.                                                                            |
 |   - Fitness Improvement       | Fitness value is better than baseline model.                                                            |
 
-#### Results
+## Results
 
 All of selection methods can drive the GA to evolve the better hyperparameter searching.
 
