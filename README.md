@@ -1,11 +1,6 @@
-<h1 id='main-title'> Deep Learning Hyperparameter Tuning Projects </h1>
+<h1 id='main-title'> Stock Price Prediction Using LSTM Applying Genetic Algorithm </h1>
 
-This github includes several projects which I interested in such as hyperparameters grid searching by `GridSearchCV`,  Genetic Algorithm (GA), or others.
-
-| Project completed | Techniques | Introduction | Codes |
-| :---------------: | :----------: | :--------: | :--------: |
-| [CNN-keras-mnist-gridsearch](#project1) | Computer Vision, Classification, GridSearchCV, KerasClassifier | Use GridSearchCV with KerasClassifier to search best hyperparameters in simple CNN model trained on MNIST database. | [Code_Link](https://github.com/Leohoji/deep-learning-for-hyperparameters-searching/blob/main/CNN-keras-mnist-gridsearch.ipynb) |
-| [price-pred-using-LSTM-applying-genetic-algorithm](#project2) | Time-Series analysis, Prediction, Genetic Algorithm | Use genetic algorithm (GA) technique to search better hyperparameters in simple Long Short-Term Memory (LSTM) model trained on APPL stock database from [kaggle dataset](https://www.kaggle.com/datasets/kalilurrahman/nasdaq100-stock-price-data/data?authuser=0) | [Code_Link](https://github.com/Leohoji/deep-learning-hyperparameter-tuning-projects/blob/main/lstm-price-preds-genetic-algorithm/price-prediction-using-LSTM-applying-genetic-algorithm.ipynb)  [Medium](https://medium.com/@leo122196/%E6%88%91%E5%A6%82%E4%BD%95%E5%88%A9%E7%94%A8%E5%9F%BA%E5%9B%A0%E6%BC%94%E7%AE%97%E6%B3%95-genetic-algorithm-ga-%E8%AA%BF%E6%95%B4%E7%A5%9E%E7%B6%93%E7%B6%B2%E8%B7%AF%E8%B6%85%E5%8F%83%E6%95%B8-470f64d6cf71) |
+Use genetic algorithm (GA) technique to search better hyperparameters in simple Long Short-Term Memory (LSTM) model trained on APPL stock database from [kaggle dataset](https://www.kaggle.com/datasets/kalilurrahman/nasdaq100-stock-price-data/data?authuser=0).
 
 <h2>Prerequisites</h2>
 
@@ -18,13 +13,9 @@ This github includes several projects which I interested in such as hyperparamet
 💻 The GPU I use is **GeForce GTX 1050 Ti**
 
 
-<h2 id='project2'>Stock price prediction using LSTM applying genetic algorithm</h2>
-
 **Notebooks Here**  --> [price-prediction-using-LSTM-applying-genetic-algorithm.ipynb](https://github.com/Leohoji/deep-learning-hyperparameter-tuning-projects/blob/main/lstm-price-preds-genetic-algorithm/price-prediction-using-LSTM-applying-genetic-algorithm.ipynb)
 
 **Mediun Blog** --> [我如何利用基因演算法 (Genetic Algorithm, GA) 調整神經網路超參數](https://medium.com/@leo122196/%E6%88%91%E5%A6%82%E4%BD%95%E5%88%A9%E7%94%A8%E5%9F%BA%E5%9B%A0%E6%BC%94%E7%AE%97%E6%B3%95-genetic-algorithm-ga-%E8%AA%BF%E6%95%B4%E7%A5%9E%E7%B6%93%E7%B6%B2%E8%B7%AF%E8%B6%85%E5%8F%83%E6%95%B8-470f64d6cf71)
-
-Use genetic algorithm (GA) technique to search better hyperparameters in simple Long Short-Term Memory (LSTM) model trained on APPL stock database from [kaggle dataset](https://www.kaggle.com/datasets/kalilurrahman/nasdaq100-stock-price-data/data?authuser=0).
 
 <h3>How Do I Complete This Project</h3>
 
