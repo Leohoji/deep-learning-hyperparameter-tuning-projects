@@ -77,11 +77,11 @@ Use genetic algorithm (GA) technique to search better hyperparameters in simple 
 
 In this project I will follow the following steps to complete my project: 
 
-<h3><ins>Problem definition</ins></h3>
+<h3>Problem definition</h3>
 
 This project is to conquer a prediction problem of time-series data. I would like to apply a evolution algorithms named Genetic Algorithm, short for GA, on LSTM model, a recursive neural network, to find a set of hyperparameters to let the predictions of stock by model be close to real price.
 
-<h3><ins>Data and Features</ins></h3>
+<h3>Data and Features</h3>
 
 The dataset used in this project is a time-series data from from kaggle dataset:
 
@@ -107,13 +107,13 @@ A **structured data** with **271680** data points, all columns are numerical.
 
 At present, most people's guess is that the stock price will be related to the previous day or previous data, hence, the previous data is feature, the current day is label. 
 
-<h3><ins>Evaluation</ins></h3>
+<h3>Evaluation</h3>
 
 **Mean Square Error (MSE)** is a common metric for prediction problem, I use it to be the model's loss function and GA's fitness function.
 
 $\text{MSE: } \frac{1}{N}\Sigma_{i=1}^{N}(y_{i} - {\hat{y}})^{2}$
 
-<h3><ins>Modeling</ins></h3>
+<h3>Modeling</h3>
 
 ```python
 def LSTM_model(input_shape):
@@ -147,7 +147,7 @@ def LSTM_model(input_shape):
   return model
 ```
 
-<h3><ins>Experiments</ins></h3>
+<h3>Experiments</h3>
 
 **Data Preprocessing**
 
@@ -163,7 +163,11 @@ def LSTM_model(input_shape):
 
 1. Train a baseline model to be the metric of genetic algorithm.
 
-ExperimentaL conditions:
+2. Apply genetic algorithm (GA) to find better `epoch` and `look_back` hyperparameters.
+
+The detail introduction of GA is written on my medium (Traditional Chinese): [基因演算法 (Genetic Algorithm, GA) 介紹](https://medium.com/@leo122196/%E5%9F%BA%E5%9B%A0%E6%BC%94%E7%AE%97%E6%B3%95-genetic-algorithm-ga-%E4%BB%8B%E7%B4%B9-62df31c0e670)
+
+ExperimentaL conditions for `baseline model`:
 
 | Hyperparameters     | Values        |
 | :-----------------: | :-----------: |
@@ -175,13 +179,7 @@ ExperimentaL conditions:
 | Epochs              | 30            |
 | Look backs          | 10            |
 
-I also use [ReduceLROnPlateau](https://www.tensorflow.org/api_docs/python/tf/keras/callbacks/ReduceLROnPlateau) API for learning rate reduction gradually during training.
-
-2. Apply genetic algorithm (GA) to find better `epoch` and `look_back` hyperparameters.
-
-The detail introduction of GA is written on my medium (Traditional Chinese): [基因演算法 (Genetic Algorithm, GA) 介紹](https://medium.com/@leo122196/%E5%9F%BA%E5%9B%A0%E6%BC%94%E7%AE%97%E6%B3%95-genetic-algorithm-ga-%E4%BB%8B%E7%B4%B9-62df31c0e670)
-
-ExperimentaL conditions:
+ExperimentaL conditions for `GA searching`:
 
 | Hyperparameters     | Values        |
 | :-----------------: | :-----------: |
@@ -193,35 +191,25 @@ ExperimentaL conditions:
 | Epochs              | `??`          |
 | Look backs          | `??`          |
 
+I also use [ReduceLROnPlateau](https://www.tensorflow.org/api_docs/python/tf/keras/callbacks/ReduceLROnPlateau) API for learning rate reduction gradually during training.
+
 Following is the condition I used in GA:
-
-**Population Initialization**: 10 `[epochs, look_back]` group to combine a population with randomly generation.
-
-**Fitness Function**: **Mean Square Error (MSE)**, as well as the loss function used in LSTM model for evaluation.
-
-**Selection**: 
-
-(1) Rank Selection: Choose the top 50% to be offsprings .
-
-(2) Roulette Wheel Selection: Assign the cumulative probability for each fitness individual based on the value.
-
-(3) Tournament Selection: Randomly choose 2 individual to compete.
-
-**Crossover**: The range of crossover rate is [0.5, 1.].
-
-**Mutation**: The mutation rate is fixed to 0.1
-
-**Survivor Selection**:
-
-(1) If the value of offspring is zero or bigger than max value, it will be rejected to the next generation.
-
-(2) If the length of the offspring is less than three, new population will be generated and join it.
-
-**Termination Condition**
-
-(1) Max iteration is set as 100.
-
-(2) Fitness value is better than baseline model.
+| **Component**                 | **Description**                                                                                         |
+| :---------------------------- | :------------------------------------------------------------------------------------------------------ |
+| **Population Initialization** | 10 `[epochs, look_back]` groups to combine a population with randomly generation.                       |
+| **Fitness Function**          | **Mean Square Error (MSE)**, as well as the loss function used in LSTM model for evaluation.            |
+| **Selection**                 |                                                                                                         |
+|   - Rank Selection            | Choose the top 50% to be offsprings.                                                                    |
+|   - Roulette Wheel Selection  | Assign the cumulative probability for each fitness individual based on the value.                       |
+|   - Tournament Selection      | Randomly choose 2 individual to compete.                                                                |
+| **Crossover**                 | The range of crossover rate is [0.5, 1.].                                                               |
+| **Mutation**                  | The mutation rate is fixed to 0.1.                                                                      |
+| **Survivor Selection**        |                                                                                                         |
+|   - Rejection Criteria        | If the value of offspring is zero or bigger than max value, it will be rejected to the next generation. |
+|   - Population Regeneration   | If the length of the offspring is less than three, new population will be generated and join it.        |
+| **Termination Condition**     |                                                                                                         |
+|   - Max Iteration             | Max iteration is set as 100.                                                                            |
+|   - Fitness Improvement       | Fitness value is better than baseline model.                                                            |
 
 #### Results
 
